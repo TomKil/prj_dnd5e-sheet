@@ -1,0 +1,21 @@
+{
+    "name": "serverdemo",
+    "version": "0.0.1",
+    "description": "demo av express server",
+    "main": "server.mjs",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server.js"
+    },
+    "keywords": [
+      "express",
+      "server",
+      "demo"
+    ],
+    "author": "me",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.18.2",
+      "jokemaster": "github:mm-207/JokeModuleDemo"
+    }
+  }
