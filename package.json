@@ -1,0 +1,22 @@
+{
+  "name": "npmtest",
+  "version": "1.0.0",
+  "description": "test npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "git init"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomKil/prj_dnd5e-sheet.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "Tommy A Killingstad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TomKil/prj_dnd5e-sheet/issues"
+  },
+  "homepage": "https://github.com/TomKil/prj_dnd5e-sheet#readme"
+}
