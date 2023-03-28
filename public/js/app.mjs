@@ -61,6 +61,7 @@ class CesarChipherApp{
 
     async submit(){
        await  ComunicatiomManager.send(`${API_ENDPOINTS.base}${API_ENDPOINTS.encrypt.endpoint}`, {msg:this.#msg, shift:this.#shiftValue})
+       onSubmit(); //As the saveBtn doesn't work with code as currently written, onSubmit is put here so it gets called
     }
 
     async decrypt(){
@@ -135,6 +136,7 @@ async function onSubmit(){
         "inventory": inventory
     };
     const stringifySheet = JSON.stringify(savedSheet);
+    await ComunicatiomManager.send(`${API_ENDPOINTS.base}${API_ENDPOINTS.encrypt.endpoint}`, {stringifySheet}); //Sends the stringified character sheet to database.
 }
 document.getElementById(saveButton).onclick = onSubmit;
 
