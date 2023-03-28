@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeons and Dragons 5e Character Sheet</title>
+
+    <link rel="stylesheet" href="/UI.css">
+</head>
+<style>
+    .charName {
+        position: absolute;
+        top: 30px;
+        left: 0px;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    .sheetInfoRowOne {
+        position: absolute;
+        top: 45px;
+        left: 200px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    .sheetInfoRowTwo {
+        position: absolute;
+        top: 80px;
+        left: 200px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    .sheetInfoRowOne input[type="number"] {
+        width: 10px;
+        height: 10px;
+        border-radius: 0;
+        padding: 10px;
+    }
+    .abilityScores {
+        position: absolute;
+        top: 150px;
+        left: 0px;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    .abilityScores input[type="text"] {
+        width: 50px;
+        height: 50px;
+        border-radius: 0;
+        padding: 10px;
+    }
+    .savingThrows {
+        position: absolute;
+        top: 180px;
+        left: 170px;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+
+    .skillList {
+        position: absolute;
+        top: 470px;
+        left: 170px;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    .generalStats {
+        position: absolute;
+        top: 170px;
+        left: 450px;
+        margin-top: 30px;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .generalStats input[type="text"] {
+        width: 20px;
+        height: 20px;
+        border-radius: 0;
+        padding: 10px;
+    }
+    .health {
+        position: absolute;
+        top: 230px;
+        left: 450px;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    .hitDice {
+        position: absolute;
+        top: 770px;
+        left: 450px;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    .deathSaveSuccess {
+        position: absolute;
+        top: 810px;
+        left: 660px;
+        margin-top: 30px;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .deathSaveFail {
+        position: absolute;
+        top: 830px;
+        left: 660px;
+        margin-top: 30px;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .personalityTraits {
+        position: absolute;
+        top: 180px;
+        left: 950px;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    .featsAndTraits {
+        position: absolute;
+        top: 1130px;
+        left: 950px;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    .passivePerception {
+        position: absolute;
+        top: 1010px;
+        left: 0px;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    .passivePerception input[type="text"] {
+        width: 20px;
+        height: 20px;
+        border-radius: 0;
+        padding: 10px;
+    }
+    .proficiencies {
+        position: absolute;
+        top: 1130px;
+        left: 0px;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    .inventory {
+        position: absolute;
+        top: 1130px;
+        left: 500px;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+  </style>
+<body>
+
+    <div id="authenticateUI" class="hidden">
+        <p>Register or Authenticate</p>
+        <input type="email" id="userEmail"><button id="userAuthButton">send</button>
+    </div>
+
+    <div id="saveBtn" class="save">
+    </div>
+    <hr>
+
+    <div class="charName" id="charName">
+        <h3>Character Name</h3><input type="text" id="charName">
+    </div>
+    <div class="sheetInfoRowOne" id="sheetInfo">
+        <input type="text" id="charClass"><h5>Class</h5>
+        <input type="number" id="level"><h5>Level</h5>
+        <input type="text" id="background"><h5>Background</h5>
+        <input type="text" id="playerName"><h5>Player Name</h5>
+
+    </div>
+    <div class="sheetInfoRowTwo" id="sheetInfo">
+        <input type="text" id="race"><h5>Race</h5>
+        <input type="text" id="alignment"><h5>Alignment</h5>
+        <input type="text" id="exp"><h5>Experience</h5>
+    </div>
+
+    <div class="profBonusContainer" id="profBonusContainer"></div>
+
+    <div class="abilityScores" id="abilityScores">
+        <input type="text" id="strengthScore"><h4>Strength</h4>
+        <div id="strengthMod"></div>
+
+        <input type="text" id="dexterityScore"><h4>Dexterity</h4>
+        <div id="dexterityMod"></div>
+
+        <input type="text" id="constitutionScore"><h4>Constitution</h4>
+        <div id="constitutionMod"></div>
+
+        <input type="text" id="intelligenceScore"><h4>Intelligence</h4>
+        <div id="intelligenceMod"></div>
+
+        <input type="text" id="wisdomScore"><h4>Wisdom</h4>
+        <div id="wisdomMod"></div>
+
+        <input type="text" id="charismaScore"><h4>Charisma</h4>
+        <div id="charismaMod"></div>
+    </div>
+    <br>
+
+    <div class="savingThrows" id="savingThrows">
+        <input type="checkbox" id="strengthSave">
+        <label for="strengthSave"> Strength</label>
+        <div id="strengthSaveTotal"></div><br>
+        <input type="checkbox" id="dexteritySave">
+        <label for="dexteritySave"> Dexterity</label>
+        <div id="dexteritySaveTotal"></div><br>
+        <input type="checkbox" id="constitutionSave">
+        <label for="constitutionSave"> Constitution</label>
+        <div id="constitutionSaveTotal"></div><br>
+        <input type="checkbox" id="intelligenceSave">
+        <label for="intelligenceSave"> Intelligence</label>
+        <div id="intelligenceSaveTotal"></div><br>
+        <input type="checkbox" id="wisdomSave">
+        <label for="wisdomSave"> Wisdom</label>
+        <div id="wisdomSaveTotal"></div><br>
+        <input type="checkbox" id="charismaSave">
+        <label for="charismaSave"> Charisma</label>
+        <div id="charismaSaveTotal"></div>
+    </div>
+    <br>
+    <div class="skillList" id="skillList">
+        <input type="checkbox" id="acrobatics">
+        <label for="acrobatics"> Acrobatics</label><br>
+        <input type="checkbox" id="animalHandling">
+        <label for="animalHandling"> Animal Handling</label><br>
+        <input type="checkbox" id="arcana">
+        <label for="arcana"> Arcana</label><br>
+        <input type="checkbox" id="athletics">
+        <label for="athletics"> Athletics</label><br>
+        <input type="checkbox" id="deception">
+        <label for="deception"> Deception</label><br>
+        <input type="checkbox" id="history">
+        <label for="history"> History</label><br>
+        <input type="checkbox" id="insight">
+        <label for="insight"> Insight</label><br>
+        <input type="checkbox" id="intimidation">
+        <label for="intimidation"> Intimidation</label><br>
+        <input type="checkbox" id="investigation">
+        <label for="investigation"> Investigation</label><br>
+        <input type="checkbox" id="medicine">
+        <label for="medicine"> Medicine</label><br>
+        <input type="checkbox" id="nature">
+        <label for="nature"> Nature</label><br>
+        <input type="checkbox" id="perception">
+        <label for="perception"> Perception</label><br>
+        <input type="checkbox" id="performance">
+        <label for="performance"> Performance</label><br>
+        <input type="checkbox" id="persuasion">
+        <label for="persuasion"> Persuasion</label><br>
+        <input type="checkbox" id="religion">
+        <label for="religion"> Religion</label><br>
+        <input type="checkbox" id="sleightOfHand">
+        <label for="sleightOfHand"> Sleight of Hand</label><br>
+        <input type="checkbox" id="stealth">
+        <label for="stealth"> Stealth</label><br>
+        <input type="checkbox" id="survival">
+        <label for="survival"> Survival</label><br>
+    </div>
+    <div class="passivePerception" id="passivePerception">
+        <input type="text" id="passivePerception"><h4>Passive Perception</h4>
+    </div>
+
+    <div class="generalStats" id="generalStats">
+        <input type="text" id="AC"><h4>AC</h4>
+        <input type="text" id="initiative"><h4>Initiative</h4>
+        <input type="text" id="movement"><h4>Movement</h4>
+    </div>
+    <div class="health" id="health">
+        <h4>Hit Point Maximum</h4><input type="text" id="hpMax"><br>
+        <textarea name="hitPoints" rows="10" cols="30"></textarea>
+        <h4>Current Hit Points</h4>
+        <textarea name="tempHP" rows="10" cols="30"></textarea>
+        <br><h4>Temporary Hit Points</h4>
+    </div>
+    <div class="hitDice" id="hitDice">
+        <h4>Hit Dice Maximum</h4><input type="text" id="hdMax"><br>
+        <textarea name="hitDice" rows="2" cols="20"></textarea>
+        <h4>Hit Dice</h4>
+    </div>
+    <div class="deathSaveSuccess" id="deathSaveSuccess">
+        <input type="checkbox" id="deathSdeathSaveSuccessOne">
+        <input type="checkbox" id="deathSdeathSaveSuccessTwo">
+        <input type="checkbox" id="deathSdeathSaveSuccessThree">
+    </div>
+    <div class="deathSaveFail" id="deathSaveFail">
+        <input type="checkbox" id="deathSdeathSaveFailOne">
+        <input type="checkbox" id="deathSdeathSaveFailTwo">
+        <input type="checkbox" id="deathSdeathSaveFailThree">
+        <h4>Death Saving Throws</h4>
+    </div>
+
+    <div class="personalityTraits" id="personalityTraits">
+        <textarea name="personality" rows="10" cols="30"></textarea>
+        <br><h4>Personality Traits</h4>
+        <textarea name="ideals" rows="10" cols="30"></textarea>
+        <br><h4>Ideals</h4>
+        <textarea name="bonds" rows="10" cols="30"></textarea>
+        <br><h4>Bonds</h4>
+        <textarea name="flaws" rows="10" cols="30"></textarea>
+        <h4>Flaws</h4>
+    </div>
+
+    <div class="featsAndTraits" id="featsAndTraits">
+        <textarea name="traits" rows="10" cols="30"></textarea>
+        <h4>Features and Traits</h4>
+    </div>
+    <div class="proficiencies" id="proficiencies">
+        <textarea name="proficiencies" rows="10" cols="30"></textarea>
+        <h4>Proficiencies</h4>
+    </div>
+
+    <div class="inventory" id="inventory">
+        <textarea name="inventory" rows="10" cols="30"></textarea>
+        <h4>Inventory</h4>
+    </div>
+    
+    <script src="js/app.mjs" type="module">
+    </script>
+</body>
+
+</html>

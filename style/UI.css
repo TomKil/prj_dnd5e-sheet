@@ -1,0 +1,163 @@
+.hidden{
+    display: none;
+}
+
+
+
+.charName {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.sheetInfoRowOne {
+    position: absolute;
+    top: 15px;
+    left: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.sheetInfoRowTwo {
+    position: absolute;
+    top: 50px;
+    left: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.sheetInfoRowOne input[type="number"] {
+    width: 10px;
+    height: 10px;
+    border-radius: 0;
+    padding: 10px;
+}
+.abilityScores {
+    position: absolute;
+    top: 120px;
+    left: 0px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.abilityScores input[type="text"] {
+    width: 50px;
+    height: 50px;
+    border-radius: 0;
+    padding: 10px;
+}
+.savingThrows {
+    position: absolute;
+    top: 150px;
+    left: 170px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.skillList {
+    position: absolute;
+    top: 440px;
+    left: 170px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.generalStats {
+    position: absolute;
+    top: 140px;
+    left: 450px;
+    margin-top: 30px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.generalStats input[type="text"] {
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    padding: 10px;
+}
+.health {
+    position: absolute;
+    top: 200px;
+    left: 450px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.hitDice {
+    position: absolute;
+    top: 740px;
+    left: 450px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.deathSaveSuccess {
+    position: absolute;
+    top: 780px;
+    left: 660px;
+    margin-top: 30px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.deathSaveFail {
+    position: absolute;
+    top: 800px;
+    left: 660px;
+    margin-top: 30px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.personalityTraits {
+    position: absolute;
+    top: 150px;
+    left: 950px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.featsAndTraits {
+    position: absolute;
+    top: 1100px;
+    left: 950px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.passivePerception {
+    position: absolute;
+    top: 980px;
+    left: 0px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.passivePerception input[type="text"] {
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    padding: 10px;
+}
+.proficiencies {
+    position: absolute;
+    top: 1100px;
+    left: 0px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.inventory {
+    position: absolute;
+    top: 1100px;
+    left: 500px;
+    margin-top: 30px;
+    margin-left: 20px;
+}

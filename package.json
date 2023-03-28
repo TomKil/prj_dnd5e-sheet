@@ -1,22 +1,26 @@
 {
-  "name": "npmtest",
+  "name": "dndsheet",
   "version": "1.0.0",
-  "description": "test npm",
-  "main": "index.js",
+  "description": "",
+  "main": "server.mjs",
   "scripts": {
-    "test": "git init"
+    "start": "node server.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TomKil/prj_dnd5e-sheet.git"
+    "url": "git+https://github.com/mm-207/cesarDemo.git"
   },
-  "keywords": [
-    "test"
-  ],
-  "author": "Tommy A Killingstad",
+  "keywords": [],
+  "author": "Tommy Askim Killingstad",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TomKil/prj_dnd5e-sheet/issues"
+    "url": "https://github.com/mm-207/cesarDemo/issues"
   },
-  "homepage": "https://github.com/TomKil/prj_dnd5e-sheet#readme"
+  "homepage": "https://github.com/mm-207/cesarDemo#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.9.0"
+  },
+  "devDependencies": {}
 }
