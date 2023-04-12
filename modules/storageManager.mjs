@@ -90,6 +90,40 @@ class StorageManager{
         return results;
     }
 
+    async saveCharInfo(charInfo) {
+        const client = new Client(this.#credentials);
+        let results = null;
+        try {
+            await client.connect();
+            results = await client.query('INSERT INTO "public"."messages"("message") VALUES($1) RETURNING "id"', [charInfo]);
+            results = results.rows[0].info
+            client.end();
+        } catch (err) {
+            results = err;
+        } finally{
+            client.end();
+        }
+
+        return results; 
+   }
+
+   
+    async retrieveCharInfo(charInfo) {
+        const client = new Client(this.#credentials);
+        let results = null;
+        try {
+            await client.connect();
+            results = await client.query('SELECT message from "messages" where id=$1', [charInfo]);
+            results = results.rows[0].info;
+            client.end();
+        } catch (err) {
+            client.end();
+            results = err;
+        }
+
+        return results;
+    }
+
 
 
 }
