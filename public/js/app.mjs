@@ -1,5 +1,5 @@
 import UI_ELEMENTS from "./uiElements.mjs";
-import ComunicatiomManager from "./comunicationManager.mjs";
+import ComunicationManager from "./comunicationManager.mjs";
 import apiEndpoints from "./apiEndpoints.mjs";
 
 import miscDivs from "./getElementById.mjs";
@@ -72,7 +72,7 @@ class infoToDatabase{
     }
 
     async authenticate(email){
-        const token = await  ComunicatiomManager.send(`${USER_ENDPOINT.base}${USER_ENDPOINT.create.endpoint}`, {msg:this.#msg, shift:this.#shiftValue});
+        const token = await  ComunicationManager.send(`${USER_ENDPOINT.base}${USER_ENDPOINT.create.endpoint}`, {msg:this.#msg, shift:this.#shiftValue});
         console.log(token);
     }
 
@@ -139,7 +139,7 @@ async function onSubmit(){
         "inventory": inventory
     };
     const stringifySheet = JSON.stringify(savedSheet);
-    await ComunicatiomManager.send(`${API_ENDPOINTS.base}${API_ENDPOINTS.encrypt.endpoint}`, {stringifySheet}); //Sends the stringified character sheet to database.
+    await ComunicationManager.send(`${API_ENDPOINTS.base}${API_ENDPOINTS.encrypt.endpoint}`, {stringifySheet}); //Sends the stringified character sheet to database.
 }
 document.getElementById(saveButton).onclick = onSubmit;
 
