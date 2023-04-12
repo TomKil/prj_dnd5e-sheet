@@ -63,8 +63,7 @@ class infoToDatabase{
     }
 
     async submit(){
-       await  ComunicatiomManager.send(`${API_ENDPOINTS.base}${API_ENDPOINTS.encrypt.endpoint}`, {msg:this.#msg, shift:this.#shiftValue})
-       onSubmit(); //As the saveBtn doesn't work with code as currently written, onSubmit is put here so it gets called
+       onSubmit() //As the saveBtn doesn't work with code as currently written, onSubmit is put here so it gets called
     }
 
     async decrypt(){
