@@ -66,10 +66,6 @@ class infoToDatabase{
        onSubmit() //As the saveBtn doesn't work with code as currently written, onSubmit is put here so it gets called
     }
 
-    async decrypt(){
-        await ComunicatiomManager.send(`${API_ENDPOINTS.base}${API_ENDPOINTS.decrypt.endpoint}/${this.#secretId}`, { shift:this.#shiftValue})
-    }
-
     async authenticate(email){
         const token = await  ComunicatiomManager.send(`${USER_ENDPOINT.base}${USER_ENDPOINT.create.endpoint}`, {msg:this.#msg, shift:this.#shiftValue});
         console.log(token);
