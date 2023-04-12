@@ -62,6 +62,11 @@ class infoToDatabase{
         console.log("Secret id is set to", id);
     }
 
+    set charInfo(info){
+        this.#charInfo = info;
+        console.log(info);
+    }
+
     async submit(){
        onSubmit() //As the saveBtn doesn't work with code as currently written, onSubmit is put here so it gets called
     }
