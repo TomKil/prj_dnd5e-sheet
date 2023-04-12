@@ -95,7 +95,7 @@ class StorageManager{
         let results = null;
         try {
             await client.connect();
-            results = await client.query('INSERT INTO "public"."messages"("message") VALUES($1) RETURNING "id"', [charInfo]);
+            results = await client.query('INSERT INTO "public"."information"("info") VALUES($1) RETURNING "info"', [charInfo]);
             results = results.rows[0].info
             client.end();
         } catch (err) {
@@ -113,7 +113,7 @@ class StorageManager{
         let results = null;
         try {
             await client.connect();
-            results = await client.query('SELECT message from "messages" where id=$1', [charInfo]);
+            results = await client.query('SELECT info from "information" where info=$1', [charInfo]);
             results = results.rows[0].info;
             client.end();
         } catch (err) {
