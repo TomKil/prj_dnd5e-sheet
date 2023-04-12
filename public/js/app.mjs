@@ -1,6 +1,7 @@
 import UI_ELEMENTS from "./uiElements.mjs";
 import ComunicatiomManager from "./comunicationManager.mjs";
 import apiEndpoints from "./apiEndpoints.mjs";
+
 import miscDivs from "./getElementById.mjs";
 import sheetInfo from "./getElementById.mjs";
 import abilityScores from "./getElementById.mjs";
@@ -12,9 +13,11 @@ import personalityTraits from "./getElementById.mjs";
 import traitsAndProficiencies from "./getElementById.mjs";
 import inventory from "./getElementById.mjs";
 
+import scores from "./math.mjs";
+
 const {API_ENDPOINTS, USER_ENDPOINT} = apiEndpoints;
 
-class CesarChipherApp{
+class infoToDatabase{
 
     static #instance;
     #msg;
@@ -25,8 +28,8 @@ class CesarChipherApp{
 
         
 
-        if(!CesarChipherApp.#instance){
-            CesarChipherApp.#instance = this;
+        if(!infoToDatabase.#instance){
+            infoToDatabase.#instance = this;
             this.authUI = authUI;
 
             const headers = new Headers()
@@ -37,11 +40,11 @@ class CesarChipherApp{
             }
         }
         
-        return CesarChipherApp.#instance
+        return infoToDatabase.#instance
     }
 
     static get instance() {
-        return new CesarChipherApp();
+        return new infoToDatabase();
     }
 
     set message(msg){
@@ -76,11 +79,11 @@ class CesarChipherApp{
 }
 
 const authUI = document.getElementById("authenticateUI");
-const app = new CesarChipherApp(authUI);
+const app = new infoToDatabase(authUI);
 
 authUI.querySelector("#userAuthButton").onclick = async (e) => {
     const inputElement = e.target.parentNode.querySelector("#userEmail");
-    CesarChipherApp.instance.authenticate(inputElement.value)
+    infoToDatabase.instance.authenticate(inputElement.value)
     authenticated();
     if(loginStatus = 2){
         div = document.createElement("div");
@@ -103,12 +106,12 @@ async function onSubmit(){
         "player name": playerName, "character name": charName,
         "class": charClass, "level": level, "race": race,
         "background": background, "alignment": alignment, "experience earned": exp,
-        "strength": strengthScore, "strength modifier": strengthBonus, "strength saving throw": null,
-        "dexterity": dexterityScore, "dexterity modifier": dexterityBonus, "dexterity saving throw": null,
-        "constitution": constitutionScore, "constitution modifier": constitutionBonus, "constitution saving throw": null,
-        "intelligence": intelligenceScore, "intelligence modifier": intelligenceBonus, "intelligence saving throw": null,
-        "wisdom": wisdomScore, "wisdom modifier": wisdomBonus, "wisdom saving throw": null,
-        "charisma": charismaScore, "charisma modifier": charismaBonus, "charisma saving throw": null,
+        "strength": strengthScore, "strength modifier": strengthBonus, "strength saving throw": strengthSaveThrow,
+        "dexterity": dexterityScore, "dexterity modifier": dexterityBonus, "dexterity saving throw": dexteritySaveTotal,
+        "constitution": constitutionScore, "constitution modifier": constitutionBonus, "constitution saving throw": constitutionSaveTotal,
+        "intelligence": intelligenceScore, "intelligence modifier": intelligenceBonus, "intelligence saving throw": intelligenceSaveTotal,
+        "wisdom": wisdomScore, "wisdom modifier": wisdomBonus, "wisdom saving throw": wisdomSaveTotal,
+        "charisma": charismaScore, "charisma modifier": charismaBonus, "charisma saving throw": charismaSaveTotal,
         "acrobatics": profAcrobatics,
         "animal handling": profAnimalHandling,
         "arcana": profArcana,
@@ -141,15 +144,15 @@ async function onSubmit(){
 document.getElementById(saveButton).onclick = onSubmit;
 
 async function onUserSubmission (e) {
-    CesarChipherApp.instance.message = document.getElementById(UI_ELEMENTS.contentElementId).value;
-    CesarChipherApp.instance.shift = document.getElementById(UI_ELEMENTS.shiftElementId).value;
-    await CesarChipherApp.instance.submit();
+    infoToDatabase.instance.message = document.getElementById(UI_ELEMENTS.contentElementId).value;
+    infoToDatabase.instance.shift = document.getElementById(UI_ELEMENTS.shiftElementId).value;
+    await infoToDatabase.instance.submit();
 }
 document.getElementById(UI_ELEMENTS.submitButtonElementId).onclick = onUserSubmission;
 
 document.getElementById(UI_ELEMENTS.decryptButtonElementId).onclick = async (e)=>{
-    CesarChipherApp.instance.shift = document.getElementById(UI_ELEMENTS.shiftElementId).value;
-    CesarChipherApp.instance.secretId = document.getElementById(UI_ELEMENTS.secreteElementId).value;
-    await CesarChipherApp.instance.decrypt()
+    infoToDatabase.instance.shift = document.getElementById(UI_ELEMENTS.shiftElementId).value;
+    infoToDatabase.instance.secretId = document.getElementById(UI_ELEMENTS.secreteElementId).value;
+    await infoToDatabase.instance.decrypt()
 
 };

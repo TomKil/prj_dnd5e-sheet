@@ -44,6 +44,13 @@
         border-radius: 0;
         padding: 10px;
     }
+    .profBonusContainer {
+        position: absolute;
+        top: 150px;
+        left: 170px;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
     .abilityScores {
         position: absolute;
         top: 150px;
@@ -59,7 +66,7 @@
     }
     .savingThrows {
         position: absolute;
-        top: 180px;
+        top: 300px;
         left: 170px;
         margin-top: 30px;
         margin-left: 20px;
@@ -67,7 +74,7 @@
 
     .skillList {
         position: absolute;
-        top: 470px;
+        top: 580px;
         left: 170px;
         margin-top: 30px;
         margin-left: 20px;
@@ -154,7 +161,7 @@
     }
     .proficiencies {
         position: absolute;
-        top: 1130px;
+        top: 1300px;
         left: 0px;
         margin-top: 30px;
         margin-left: 20px;
@@ -194,7 +201,9 @@
         <input type="text" id="exp"><h5>Experience</h5>
     </div>
 
-    <div class="profBonusContainer" id="profBonusContainer"></div>
+    <div class="profBonusContainer" id="profBonusContainer">
+        <h4>Profciency Bonus</h4>
+    </div>
 
     <div class="abilityScores" id="abilityScores">
         <input type="text" id="strengthScore"><h4>Strength</h4>
@@ -220,61 +229,79 @@
     <div class="savingThrows" id="savingThrows">
         <input type="checkbox" id="strengthSave">
         <label for="strengthSave"> Strength</label>
-        <div id="strengthSaveTotal"></div><br>
+        <div id="strengthSaveBox"></div><br>
         <input type="checkbox" id="dexteritySave">
         <label for="dexteritySave"> Dexterity</label>
-        <div id="dexteritySaveTotal"></div><br>
+        <div id="dexteritySaveBox"></div><br>
         <input type="checkbox" id="constitutionSave">
         <label for="constitutionSave"> Constitution</label>
-        <div id="constitutionSaveTotal"></div><br>
+        <div id="constitutionSaveBox"></div><br>
         <input type="checkbox" id="intelligenceSave">
         <label for="intelligenceSave"> Intelligence</label>
-        <div id="intelligenceSaveTotal"></div><br>
+        <div id="intelligenceSaveBox"></div><br>
         <input type="checkbox" id="wisdomSave">
         <label for="wisdomSave"> Wisdom</label>
-        <div id="wisdomSaveTotal"></div><br>
+        <div id="wisdomSaveBox"></div><br>
         <input type="checkbox" id="charismaSave">
         <label for="charismaSave"> Charisma</label>
-        <div id="charismaSaveTotal"></div>
+        <div id="charismaSaveBox"></div>
     </div>
     <br>
     <div class="skillList" id="skillList">
         <input type="checkbox" id="acrobatics">
-        <label for="acrobatics"> Acrobatics</label><br>
+        <label for="acrobatics"> Acrobatics</label>
+        <div id="acrobaticsBox"></div><br>
         <input type="checkbox" id="animalHandling">
-        <label for="animalHandling"> Animal Handling</label><br>
+        <label for="animalHandling"> Animal Handling</label>
+        <div id="animalHandlingBox"></div><br>
         <input type="checkbox" id="arcana">
-        <label for="arcana"> Arcana</label><br>
+        <label for="arcana"> Arcana</label>
+        <div id="arcanaBox"></div><br>
         <input type="checkbox" id="athletics">
-        <label for="athletics"> Athletics</label><br>
+        <label for="athletics"> Athletics</label>
+        <div id="athleticsBox"></div><br>
         <input type="checkbox" id="deception">
-        <label for="deception"> Deception</label><br>
+        <label for="deception"> Deception</label>
+        <div id="deceptionBox"></div><br>
         <input type="checkbox" id="history">
-        <label for="history"> History</label><br>
+        <label for="history"> History</label>
+        <div id="historyBox"></div><br>
         <input type="checkbox" id="insight">
-        <label for="insight"> Insight</label><br>
+        <label for="insight"> Insight</label>
+        <div id="insightBox"></div><br>
         <input type="checkbox" id="intimidation">
-        <label for="intimidation"> Intimidation</label><br>
+        <label for="intimidation"> Intimidation</label>
+        <div id="intimidationBox"></div><br>
         <input type="checkbox" id="investigation">
-        <label for="investigation"> Investigation</label><br>
+        <label for="investigation"> Investigation</label>
+        <div id="investigationBox"></div><br>
         <input type="checkbox" id="medicine">
-        <label for="medicine"> Medicine</label><br>
+        <label for="medicine"> Medicine</label>
+        <div id="medicineBox"></div><br>
         <input type="checkbox" id="nature">
-        <label for="nature"> Nature</label><br>
+        <label for="nature"> Nature</label>
+        <div id="natureBox"></div><br>
         <input type="checkbox" id="perception">
-        <label for="perception"> Perception</label><br>
+        <label for="perception"> Perception</label>
+        <div id="perceptionBox"></div><br>
         <input type="checkbox" id="performance">
-        <label for="performance"> Performance</label><br>
+        <label for="performance"> Performance</label>
+        <div id="performanceBox"></div><br>
         <input type="checkbox" id="persuasion">
-        <label for="persuasion"> Persuasion</label><br>
+        <label for="persuasion"> Persuasion</label>
+        <div id="persuasionBox"></div><br>
         <input type="checkbox" id="religion">
-        <label for="religion"> Religion</label><br>
+        <label for="religion"> Religion</label>
+        <div id="religionBox"></div><br>
         <input type="checkbox" id="sleightOfHand">
-        <label for="sleightOfHand"> Sleight of Hand</label><br>
+        <label for="sleightOfHand"> Sleight of Hand</label>
+        <div id="sleightOfHandBox"></div><br>
         <input type="checkbox" id="stealth">
-        <label for="stealth"> Stealth</label><br>
+        <label for="stealth"> Stealth</label>
+        <div id="stealthBox"></div><br>
         <input type="checkbox" id="survival">
-        <label for="survival"> Survival</label><br>
+        <label for="survival"> Survival</label>
+        <div id="survivalBox"></div><br>
     </div>
     <div class="passivePerception" id="passivePerception">
         <input type="text" id="passivePerception"><h4>Passive Perception</h4>

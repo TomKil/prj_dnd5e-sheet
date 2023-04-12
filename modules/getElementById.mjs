@@ -37,12 +37,19 @@ export const abilityModifiers = {
 
 /*---- Saving Throws----*/
 export const savingThrows = {
-    strengthSaveTotal: document.getElementById("strengthSaveTotal"),
-    dexteritySaveTotal: document.getElementById("dexteritySaveTotal"),
-    constitutionSaveTotal: document.getElementById("constitutionSaveTotal"),
-    intelligenceSaveTotal: document.getElementById("intelligenceSaveTotal"),
-    wisdomSaveTotal: document.getElementById("wisdomSaveTotal"),
-    charismaSaveTotal: document.getElementById("charismaSaveTotal")
+    strengthSave: document.getElementById("strengthSave"),
+    dexteritySave: document.getElementById("dexteritySave"),
+    constitutionSave: document.getElementById("constitutionSave"),
+    intelligenceSave: document.getElementById("intelligenceSave"),
+    wisdomSave: document.getElementById("wisdomSave"),
+    charismaSave: document.getElementById("charismaSave"),
+
+    strengthSaveBox: document.getElementById("strengthSaveBox"),
+    dexteritySaveBox: document.getElementById("dexteritySaveBox"),
+    constitutionSaveBox: document.getElementById("constitutionSaveBox"),
+    intelligenceSaveBox: document.getElementById("intelligenceSaveBox"),
+    wisdomSaveBox: document.getElementById("wisdomSaveBox"),
+    charismaSaveBox: document.getElementById("charismaSaveBox")
 };
 
 /*---- Skills ----*/
@@ -64,7 +71,26 @@ export const skills = {
     profReligion: document.getElementById("religion"),
     profSleightOfHand: document.getElementById("sleightOfHand"),
     profStealth: document.getElementById("stealth"),
-    profSurvival: document.getElementById("survival")
+    profSurvival: document.getElementById("survival"),
+
+    acrobaticsBox: document.getElementById("acrobaticsBox"),
+    animalHandlingBox: document.getElementById("animalHandlingBox"),
+    arcanaBox: document.getElementById("arcanaBox"),
+    athleticsBox: document.getElementById("athleticsBox"),
+    deceptionBox: document.getElementById("deceptionBox"),
+    historyBox: document.getElementById("historyBox"),
+    insightBox: document.getElementById("insightBox"),
+    intimidationBox: document.getElementById("intimidationBox"),
+    investigationBox: document.getElementById("investigationBox"),
+    medicineBox: document.getElementById("medicineBox"),
+    natureBox: document.getElementById("natureBox"),
+    perceptionBox: document.getElementById("perceptionBox"),
+    performanceBox: document.getElementById("performanceBox"),
+    persuasionBox: document.getElementById("persuasionBox"),
+    religionBox: document.getElementById("religionBox"),
+    sleightOfHandBox: document.getElementById("sleightOfHandBox"),
+    stealthBox: document.getElementById("stealthBox"),
+    survivalBox: document.getElementById("survivalBox")
 };
 
 /*---- General Stats ----*/
